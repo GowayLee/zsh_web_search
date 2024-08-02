@@ -1,3 +1,4 @@
+## Add custom search engine here
 declare -A search_url_arr=(
   ["google"]="https://google.com/search?q="
   ["bing"]="https://bing.com/search?q="
@@ -5,9 +6,10 @@ declare -A search_url_arr=(
   ["github"]="https://github.com/search?q="
   ["yahoo"]="https://search.yahoo.com/search?p="
   ["blbl"]="https://search.bilibili.com/all?keyword="
-  ["youtube"]="https://yahoo.com/results?search_query="
+  ["youtube"]="https://www.youtube.com/results?search_query="
 )
 
+## Set custom search engine alias here
 alias bing='web_search bing'
 alias google='web_search google'
 alias baidu='web_search baidu'
@@ -23,7 +25,7 @@ case "$OSTYPE" in
   web_search_open_cmd='start'
   ;;
 "linux")
-  web_search_open_cmd='xdg-open' # depending of xdg-utils
+  web_search_open_cmd='xdg-open' # depending on xdg-utils
   ;;
 "darwin")
   web_search_open_cmd='open'
@@ -36,7 +38,8 @@ esac
 
 function web_search() {
   if [ $# -lt 1 ]; then
-    echo "Usage: web_search <search_engine> [keyword1] [keyword2] ... or call aliases"
+    echo -e "Usage: web_search <search_engine> [keyword1] [keyword2] ... or [no parameter to open homepage]\n\tExample: web_search google zsh (Use Google to search "zsh")"
+    echo -e "Once you have set up your own search engine, you can use the alias to search\n\tExample: google zsh (Use Google to search "zsh")"
     echo "Supported search engines(alias):"
     for key in "${(@k)search_url_arr}"; do
       echo "$key"
