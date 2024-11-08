@@ -51,3 +51,8 @@ To add more search engines, you can add them to the `zsh-web-search.zsh` file. F
         ...
     )
 ```
+
+## TODO
+
+- [ ] Change alias and variables. Prevent from confusing with other shell variables.
+- [ ] Feature to display all the support search engines.

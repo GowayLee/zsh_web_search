@@ -42,7 +42,7 @@ case "$OSTYPE" in
 "msys")
   web_search_open_cmd='start'
   ;;
-"linux")
+"linux" | "linux-gnu")
   web_search_open_cmd='xdg-open' # depending on xdg-utils
   ;;
 "darwin")
